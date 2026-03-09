@@ -22,7 +22,7 @@ jobs:
     
     - name: 📦 Deploy to S3
       run: |
-        aws s3 sync . s3://txp-volaris-dev/ \
+        aws s3 sync . s3://nutrizen-front/ \
           --exclude ".git/*" \
           --exclude ".github/*" \
           --exclude "*.md" \
@@ -32,12 +32,10 @@ jobs:
     
     - name: 🔓 Configure public access
       run: |
-        # Habilitar acceso público
         aws s3api put-public-access-block \
           --bucket nutrizen-front \
           --public-access-block-configuration "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
         
-        # Bucket policy
         cat > policy.json << 'EOF'
         {
           "Version": "2012-10-17",
@@ -50,6 +48,7 @@ jobs:
           }]
         }
         EOF
+        
         aws s3api put-bucket-policy --bucket nutrizen-front --policy file://policy.json
     
     - name: 🌐 Configure static website hosting
