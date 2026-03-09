@@ -1,0 +1,218 @@
+/* ============================================
+   CONSULTAS PAGE STYLES
+   ============================================ */
+
+/* Consultation Types Grid */
+.consultation-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    margin: 4rem auto;
+    max-width: 1200px;
+}
+
+/* Consultation Cards */
+.consultation-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.consultation-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Consultation Header */
+.consultation-header {
+    background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
+    color: white;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.consultation-header-dark {
+    background: linear-gradient(135deg, var(--sage-700) 0%, var(--sage-800) 100%);
+}
+
+.consultation-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.consultation-header h3 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.consultation-tagline {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+/* Consultation Body */
+.consultation-body {
+    padding: 2.5rem;
+}
+
+.consultation-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.consultation-features li {
+    padding: 0.9rem 0;
+    font-size: 1.05rem;
+    color: var(--neutral-700);
+    position: relative;
+    padding-left: 2.5rem;
+    line-height: 1.6;
+}
+
+.consultation-features li i {
+    position: absolute;
+    left: 0;
+    color: var(--sage-500);
+    font-size: 1.2rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background: var(--sage-50);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 1.5rem;
+}
+
+.pricing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--sage-200);
+}
+
+.pricing-item:last-child {
+    border-bottom: none;
+}
+
+.pricing-label {
+    font-weight: 600;
+    color: var(--neutral-700);
+    font-size: 1.1rem;
+}
+
+.pricing-amount {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--sage-700);
+}
+
+.consultation-cta {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Process Section */
+.process-section {
+    background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
+    border-radius: 40px;
+    padding: 5rem 3rem;
+    margin: 4rem auto;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.process-step {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    font-family: var(--font-display);
+}
+
+.process-step h4 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--sage-800);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.process-step p {
+    color: var(--neutral-600);
+    line-height: 1.7;
+}
+
+/* Policies Grid */
+.policies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.policy-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid var(--sage-200);
+    transition: all 0.3s ease;
+}
+
+.policy-card:hover {
+    border-color: var(--sage-400);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.policy-icon {
+    font-size: 2.5rem;
+    color: var(--sage-600);
+    margin-bottom: 1rem;
+}
+
+.policy-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--sage-700);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.policy-card p {
+    color: var(--neutral-600);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .consultation-types {
+        grid-template-columns: 1fr;
+    }
+}

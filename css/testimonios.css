@@ -1,0 +1,12 @@
+.testimonials-grid-full {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid-full {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Nutrizen - Itzel Zenil</title>
+    <meta name="description" content="Servicios de nutrición especializada: control de peso, patologías metabólicas, problemas hormonales y consultoría empresarial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/servicios.css">
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                NUTRIZEN
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="sobre-mi.html">Sobre mí</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <a href="contacto.html" class="cta-button">Agenda tu Consulta</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h1>Servicios de Nutrición Especializada</h1>
+            <p>Ofrezco atención personalizada en diferentes áreas de la nutrición, adaptándome a tus necesidades y objetivos específicos de salud.</p>
+        </div>
+        
+        <section>
+            <div class="services-grid">
+                <div class="service-card" id="control-peso">
+                    <i class="fas fa-weight-scale service-icon"></i>
+                    <h3>Control de Peso</h3>
+                    <p class="service-description">Programas personalizados para alcanzar tu peso ideal de manera saludable y sostenible.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Pérdida de grasa corporal</li>
+                        <li><i class="fas fa-check-circle"></i> Aumento de masa muscular</li>
+                        <li><i class="fas fa-check-circle"></i> Mejora de hábitos alimenticios</li>
+                        <li><i class="fas fa-check-circle"></i> Nutrición deportiva</li>
+                        <li><i class="fas fa-check-circle"></i> Mantenimiento de peso</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" id="patologias">
+                    <i class="fas fa-heartbeat service-icon"></i>
+                    <h3>Control de Patologías</h3>
+                    <p class="service-description">Manejo nutricional especializado para condiciones metabólicas y enfermedades crónicas.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Hipertensión arterial</li>
+                        <li><i class="fas fa-check-circle"></i> Diabetes mellitus tipo 1 y 2</li>
+                        <li><i class="fas fa-check-circle"></i> Síndrome metabólico</li>
+                        <li><i class="fas fa-check-circle"></i> Dislipidemias (colesterol alto)</li>
+                        <li><i class="fas fa-check-circle"></i> Hígado graso no alcohólico</li>
+                        <li><i class="fas fa-check-circle"></i> Salud digestiva (gastritis, colitis, SII)</li>
+                        <li><i class="fas fa-check-circle"></i> Anemia</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" id="hormonales">
+                    <i class="fas fa-venus service-icon"></i>
+                    <h3>Problemas Hormonales</h3>
+                    <p class="service-description">Nutrición especializada para el equilibrio hormonal y salud reproductiva femenina.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Síndrome de ovario poliquístico (SOP)</li>
+                        <li><i class="fas fa-check-circle"></i> Resistencia a la insulina</li>
+                        <li><i class="fas fa-check-circle"></i> Hipotiroidismo</li>
+                        <li><i class="fas fa-check-circle"></i> Endometriosis</li>
+                        <li><i class="fas fa-check-circle"></i> Salud reproductiva</li>
+                        <li><i class="fas fa-check-circle"></i> Menopausia y perimenopausia</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-baby service-icon"></i>
+                    <h3>Nutrición Materno-Infantil</h3>
+                    <p class="service-description">Acompañamiento nutricional en etapas cruciales del desarrollo.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Nutrición pre-concepcional</li>
+                        <li><i class="fas fa-check-circle"></i> Embarazo</li>
+                        <li><i class="fas fa-check-circle"></i> Lactancia materna</li>
+                        <li><i class="fas fa-check-circle"></i> Alimentación complementaria</li>
+                        <li><i class="fas fa-check-circle"></i> Nutrición pediátrica</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-dumbbell service-icon"></i>
+                    <h3>Nutrición Deportiva</h3>
+                    <p class="service-description">Optimiza tu rendimiento deportivo con planes de alimentación estratégicos.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Planes para aumentar rendimiento</li>
+                        <li><i class="fas fa-check-circle"></i> Nutrición para competencias</li>
+                        <li><i class="fas fa-check-circle"></i> Recuperación post-entrenamiento</li>
+                        <li><i class="fas fa-check-circle"></i> Suplementación deportiva</li>
+                        <li><i class="fas fa-check-circle"></i> Hidratación estratégica</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-leaf service-icon"></i>
+                    <h3>Alimentación Especial</h3>
+                    <p class="service-description">Planes adaptados a diferentes estilos de vida y preferencias alimentarias.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Dietas vegetarianas y veganas</li>
+                        <li><i class="fas fa-check-circle"></i> Alimentación sin gluten (celiaquía)</li>
+                        <li><i class="fas fa-check-circle"></i> Intolerancias alimentarias</li>
+                        <li><i class="fas fa-check-circle"></i> Alergias alimentarias</li>
+                        <li><i class="fas fa-check-circle"></i> Dietas culturales específicas</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-user-clock service-icon"></i>
+                    <h3>Nutrición Geriátrica</h3>
+                    <p class="service-description">Cuidado nutricional para adultos mayores y envejecimiento saludable.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Prevención de sarcopenia</li>
+                        <li><i class="fas fa-check-circle"></i> Manejo de osteoporosis</li>
+                        <li><i class="fas fa-check-circle"></i> Nutrición anti-envejecimiento</li>
+                        <li><i class="fas fa-check-circle"></i> Adaptación de texturas</li>
+                        <li><i class="fas fa-check-circle"></i> Manejo de polifarmacia</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" id="empresarial">
+                    <i class="fas fa-building service-icon"></i>
+                    <h3>Servicios Empresariales</h3>
+                    <p class="service-description">Programas de bienestar nutricional para empresas y organizaciones.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check-circle"></i> Talleres y pláticas educativas</li>
+                        <li><i class="fas fa-check-circle"></i> Evaluación nutricional del personal</li>
+                        <li><i class="fas fa-check-circle"></i> Creación de menús corporativos</li>
+                        <li><i class="fas fa-check-circle"></i> Programas de wellness empresarial</li>
+                        <li><i class="fas fa-check-circle"></i> Asesoría para comedores industriales</li>
+                        <li><i class="fas fa-check-circle"></i> Capacitación en nutrición</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Listo para Comenzar?</h2>
+                <p>Agenda tu consulta inicial y descubre cómo puedo ayudarte a alcanzar tus objetivos de salud</p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="primary-cta">
+                        <i class="fas fa-calendar-check"></i>
+                        Agendar Consulta
+                    </a>
+                    <a href="consultas.html" class="secondary-cta" style="background: white; color: var(--sage-700);">
+                        <i class="fas fa-info-circle"></i>
+                        Ver Tipos de Consulta
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>
+                    <i class="fas fa-leaf"></i>
+                    NUTRIZEN
+                </h3>
+                <p>Transformando vidas a través de la nutrición personalizada. Mi misión es ayudarte a alcanzar tus metas de salud de manera sostenible y deliciosa.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/nutrizen__" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/529999999999" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:nutriologaitzelzenil@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="consultas.html">Consultas</a></li>
+                    <li><a href="sobre-mi.html">Sobre mí</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <span>@nutrizen__</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>nutriologaitzelzenil@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nutrizen - Itzel Zenil. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/js/script.js"></script>
+</body>
+</html>

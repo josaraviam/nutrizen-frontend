@@ -1,0 +1,63 @@
+name: Deploy to AWS S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout
+      uses: actions/checkout@v3
+    
+    - name: 🔑 Configure AWS
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    
+    - name: 📦 Deploy to S3
+      run: |
+        aws s3 sync . s3://txp-volaris-dev/ \
+          --exclude ".git/*" \
+          --exclude ".github/*" \
+          --exclude "*.md" \
+          --exclude "*.sh" \
+          --exclude ".DS_Store" \
+          --delete
+    
+    - name: 🔓 Configure public access
+      run: |
+        # Habilitar acceso público
+        aws s3api put-public-access-block \
+          --bucket nutrizen-front \
+          --public-access-block-configuration "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
+        
+        # Bucket policy
+        cat > policy.json << 'EOF'
+        {
+          "Version": "2012-10-17",
+          "Statement": [{
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::nutrizen-front/*"
+          }]
+        }
+        EOF
+        aws s3api put-bucket-policy --bucket nutrizen-front --policy file://policy.json
+    
+    - name: 🌐 Configure static website hosting
+      run: |
+        aws s3 website s3://nutrizen-front/ \
+          --index-document index.html
+    
+    - name: ✅ Deployment complete
+      run: |
+        echo "🎉 Deploy exitoso!"
+        echo "🌐 URL: http://nutrizen-front.s3-website-us-east-1.amazonaws.com"

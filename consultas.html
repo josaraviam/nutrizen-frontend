@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas | Nutrizen - Itzel Zenil</title>
+    <meta name="description" content="Consultas de nutrición online y presenciales. Planes personalizados con seguimiento continuo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Darker+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/consultas.css">
+</head>
+<body>
+    <div class="bg-decoration"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                NUTRIZEN
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="consultas.html" class="active">Consultas</a></li>
+                <li><a href="sobre-mi.html">Sobre mí</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <a href="contacto.html" class="cta-button">Agenda tu Consulta</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h1>Consultas de Nutrición</h1>
+            <p>Elige la modalidad que mejor se adapte a ti. Ambas incluyen atención personalizada y seguimiento continuo.</p>
+        </div>
+        
+        <section>
+            <div class="consultation-types">
+                <!-- Online Consultation -->
+                <div class="consultation-card">
+                    <div class="consultation-header">
+                        <div class="consultation-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3>Consulta Online</h3>
+                        <p class="consultation-tagline">Desde la comodidad de tu hogar</p>
+                    </div>
+                    <div class="consultation-body">
+                        <ul class="consultation-features">
+                            <li><i class="fas fa-video"></i> Consulta nutricional de 50 minutos vía videollamada</li>
+                            <li><i class="fas fa-clipboard-check"></i> Diagnóstico y evaluación nutricional completa</li>
+                            <li><i class="fas fa-ruler"></i> Guía detallada para tomar medidas antropométricas desde casa</li>
+                            <li><i class="fas fa-utensils"></i> Plan de alimentación 100% personalizado a tus gustos y horarios</li>
+                            <li><i class="fas fa-book"></i> Material digital: guías educativas e infografías</li>
+                            <li><i class="fas fa-book-open"></i> Recetarios adaptados a tu presupuesto y preferencias</li>
+                            <li><i class="fab fa-whatsapp"></i> Acompañamiento continuo por WhatsApp durante todo el tratamiento</li>
+                        </ul>
+                        
+                        <div class="pricing-section">
+                            <div class="pricing-item">
+                                <span class="pricing-label">Consulta Inicial</span>
+                                <span class="pricing-amount">$500</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Seguimiento</span>
+                                <span class="pricing-amount">$400</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contacto.html" class="primary-cta consultation-cta">
+                            <i class="fas fa-calendar-check"></i>
+                            Agendar Consulta Online
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Presencial Consultation -->
+                <div class="consultation-card">
+                    <div class="consultation-header consultation-header-dark">
+                        <div class="consultation-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h3>Consulta Presencial</h3>
+                        <p class="consultation-tagline">Atención personalizada cara a cara</p>
+                    </div>
+                    <div class="consultation-body">
+                        <ul class="consultation-features">
+                            <li><i class="fas fa-user-md"></i> Consulta nutricional de 50 minutos en consultorio</li>
+                            <li><i class="fas fa-clipboard-list"></i> Diagnóstico y evaluación nutricional completa</li>
+                            <li><i class="fas fa-weight-scale"></i> Análisis de composición corporal con báscula InBody profesional</li>
+                            <li><i class="fas fa-utensils"></i> Plan de alimentación 100% personalizado a tus gustos y horarios</li>
+                            <li><i class="fas fa-book"></i> Material digital: guías educativas e infografías</li>
+                            <li><i class="fas fa-book-open"></i> Recetarios adaptados a tu presupuesto y preferencias</li>
+                            <li><i class="fab fa-whatsapp"></i> Acompañamiento continuo por WhatsApp durante todo el tratamiento</li>
+                        </ul>
+                        
+                        <div class="pricing-section">
+                            <div class="pricing-item">
+                                <span class="pricing-label">Consulta Inicial</span>
+                                <span class="pricing-amount">$600</span>
+                            </div>
+                            <div class="pricing-item">
+                                <span class="pricing-label">Seguimiento</span>
+                                <span class="pricing-amount">$500</span>
+                            </div>
+                        </div>
+                        
+                        <a href="contacto.html" class="primary-cta consultation-cta">
+                            <i class="fas fa-calendar-check"></i>
+                            Agendar Consulta Presencial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="section-header">
+                <div class="section-label">Cómo Funciona</div>
+                <h2 class="section-title">El Proceso de Consulta</h2>
+                <p class="section-description">Un camino estructurado hacia tus objetivos de salud</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Agenda tu Cita</h4>
+                    <p>Contacta por WhatsApp o Instagram para encontrar el horario perfecto para ti.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Primera Consulta</h4>
+                    <p>Evaluación completa de tu estado de salud, hábitos actuales y objetivos específicos.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Plan Personalizado</h4>
+                    <p>Recibe tu plan de alimentación diseñado específicamente para ti, con recetas y guías.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Seguimiento</h4>
+                    <p>Consultas de seguimiento cada 15 días o 1 mes, más soporte continuo por WhatsApp.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Policies Section -->
+        <section>
+            <div class="section-header">
+                <div class="section-label">Políticas</div>
+                <h2 class="section-title">Información Importante</h2>
+            </div>
+            
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Duración de la Consulta</h4>
+                    <p>La consulta tiene una duración estimada de 50 minutos. En caso de llegar tarde, el tiempo de la consulta se ajustará para respetar el horario de los siguientes pacientes.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h4>Cancelación o Modificación</h4>
+                    <p>Si requieres cancelar o reprogramar tu cita, podrás hacerlo sin costo hasta 24 horas antes de la hora programada. Después de este lapso se aplicará una penalización de $150 MXN.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <h4>No Asistencia</h4>
+                    <p>En caso de no asistir a la cita o solicitar un cambio el mismo día, se cobrará una penalización de $150 MXN.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4>Primera Consulta</h4>
+                    <p>Se recomienda ir con ropa cómoda y ligera. Si tienes análisis clínicos recientes (no mayores a 3 meses), tráelos. En consulta puedo indicarte cuáles realizarte según tu caso.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                    <h4>Frecuencia de Seguimiento</h4>
+                    <p>El seguimiento se realiza cada 15 días o cada mes, según tus objetivos y avances. Lo definiremos juntos en la primera consulta.</p>
+                </div>
+                
+                <div class="policy-card">
+                    <div class="policy-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Soporte Continuo</h4>
+                    <p>Durante todo tu tratamiento tendrás acceso a soporte por WhatsApp para resolver dudas, ajustar tu plan y mantenerte motivado.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Lista/o para Empezar?</h2>
+                <p>Agenda tu primera consulta hoy y da el primer paso hacia una vida más saludable</p>
+                <div class="cta-buttons">
+                    <a href="contacto.html" class="primary-cta">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar Ahora
+                    </a>
+                    <a href="faq.html" class="secondary-cta secondary-cta-white">
+                        <i class="fas fa-question-circle"></i>
+                        Preguntas Frecuentes
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>
+                    <i class="fas fa-leaf"></i>
+                    NUTRIZEN
+                </h3>
+                <p>Transformando vidas a través de la nutrición personalizada. Mi misión es ayudarte a alcanzar tus metas de salud de manera sostenible y deliciosa.</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/nutrizen__" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/529999999999" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:nutriologaitzelzenil@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="consultas.html">Consultas</a></li>
+                    <li><a href="sobre-mi.html">Sobre mí</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="faq.html">Preguntas Frecuentes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                        <span>@nutrizen__</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>nutriologaitzelzenil@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nutrizen - Itzel Zenil. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
