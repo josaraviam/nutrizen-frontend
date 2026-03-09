@@ -22,7 +22,7 @@ jobs:
     
     - name: 📦 Deploy to S3
       run: |
-        aws s3 sync . s3://nutrizen-front-dev/ \
+        aws s3 sync . s3://savimind-nutrizen-dev/ \
           --exclude ".git/*" \
           --exclude ".github/*" \
           --exclude "*.md" \
@@ -33,7 +33,7 @@ jobs:
     - name: 🔓 Configure public access
       run: |
         aws s3api put-public-access-block \
-          --bucket nutrizen-front-dev \
+          --bucket savimind-nutrizen-dev \
           --public-access-block-configuration "BlockPublicAcls=false,IgnorePublicAcls=false,BlockPublicPolicy=false,RestrictPublicBuckets=false"
         
         cat > policy.json << 'EOF'
@@ -44,19 +44,19 @@ jobs:
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::nutrizen-front-dev/*"
+            "Resource": "arn:aws:s3:::savimind-nutrizen-dev/*"
           }]
         }
         EOF
         
-        aws s3api put-bucket-policy --bucket nutrizen-front-dev --policy file://policy.json
+        aws s3api put-bucket-policy --bucket savimind-nutrizen-dev --policy file://policy.json
     
     - name: 🌐 Configure static website hosting
       run: |
-        aws s3 website s3://nutrizen-front-dev/ \
+        aws s3 website s3://savimind-nutrizen-dev/ \
           --index-document index.html
     
     - name: ✅ Deployment complete
       run: |
         echo "Deploy exitoso!"
-        echo "🌐 URL: http://nutrizen-front-dev.s3-website-us-east-1.amazonaws.com"
+        echo "🌐 URL: http://savimind-nutrizen-dev.s3-website-us-east-1.amazonaws.com"
