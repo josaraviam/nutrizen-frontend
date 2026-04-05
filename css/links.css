@@ -1,0 +1,230 @@
+/* =============================================
+   NUTRIZEN · links.css
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-dark:  #1a2e22;
+  --green-mid:   #2d6a4f;
+  --green:       #3a7d5a;
+  --green-light: #52b788;
+  --green-pale:  #d8f3e0;
+  --green-bg:    #e8f5ee;
+  --text-dark:   #1a2e22;
+  --text-mid:    #4a6b58;
+  --text-muted:  #8aaa97;
+  --white:       #ffffff;
+  --radius:      16px;
+  --radius-pill: 50px;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--green-bg);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(82,183,136,0.22) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 85%, rgba(45,106,79,0.15) 0%, transparent 50%),
+    var(--green-bg);
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.25rem 6rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Profile ─────────────────────────────── */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.avatar-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.4rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--white);
+  box-shadow: 0 4px 20px rgba(26,46,34,0.15);
+}
+
+.logo-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background: var(--white);
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+}
+
+.socials {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  border: 0.5px solid rgba(58,125,90,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.socials a:hover {
+  background: var(--white);
+  transform: scale(1.1);
+}
+
+/* ── Links ───────────────────────────────── */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 0.5px solid rgba(58,125,90,0.18);
+  text-decoration: none;
+  color: var(--text-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  width: 100%;
+  text-align: left;
+}
+
+.link-btn:hover {
+  background: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(58,125,90,0.12);
+}
+
+.link-btn:active {
+  transform: translateY(0);
+}
+
+.link-btn--primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+
+.link-btn--primary:hover {
+  background: var(--green-mid);
+  box-shadow: 0 4px 20px rgba(58,125,90,0.3);
+}
+
+.link-btn__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.2);
+}
+
+.link-btn--primary .link-btn__icon {
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+
+.link-btn:not(.link-btn--primary) .link-btn__icon {
+  background: var(--green-pale);
+  color: var(--green);
+}
+
+.link-btn__text {
+  flex: 1;
+}
+
+.link-btn__arrow {
+  font-size: 13px;
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.link-btn:hover .link-btn__arrow {
+  opacity: 0.9;
+  transform: translateX(2px);
+}
+
+/* ── Footer note ─────────────────────────── */
+.footer-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── Mobile ──────────────────────────────── */
+@media (max-width: 480px) {
+  .page {
+    padding: 2rem 1rem 5rem;
+  }
+  .name {
+    font-size: 1.125rem;
+  }
+}

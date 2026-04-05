@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrizen · Itzel Zenil</title>
+  <meta name="description" content="Nutrióloga Itzel Zenil · Consultas presenciales y online en Cancún" />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/links.css" />
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+
+      <div class="profile">
+        <div class="avatar-wrap">
+          <img src="assets/itzel-3.webp" alt="Itzel Zenil · Nutrióloga" class="avatar" />
+          <img src="assets/logo.png" alt="Nutrizen" class="logo-badge" />
+        </div>
+        <h1 class="name">Nutrióloga Itzel Zenil</h1>
+        <p class="tagline">Nutrición personalizada · Cancún, Q.R.</p>
+        <div class="socials">
+          <a href="https://instagram.com/nutrizen___" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://api.whatsapp.com/send/?phone=5219981917732&text=Hola%20Itzel%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s&type=phone_number&app_absent=0" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="/cdn-cgi/l/email-protection#553b2021273c3a393a32343c212f30392f303b3c39153238343c397b363a38" aria-label="Correo"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="links">
+
+        <button class="link-btn link-btn--primary" id="btn-agendar">
+          <span class="link-btn__icon"><i class="fas fa-calendar-check"></i></span>
+          <span class="link-btn__text">Agendar consulta</span>
+          <span class="link-btn__arrow"><i class="fas fa-arrow-right"></i></span>
+        </button>
+
+        <a href="index.html" class="link-btn">
+          <span class="link-btn__icon"><i class="fas fa-leaf"></i></span>
+          <span class="link-btn__text">Sitio web</span>
+          <span class="link-btn__arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://instagram.com/nutrizen___" target="_blank" class="link-btn">
+          <span class="link-btn__icon"><i class="fab fa-instagram"></i></span>
+          <span class="link-btn__text">Instagram</span>
+          <span class="link-btn__arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://api.whatsapp.com/send/?phone=5219981917732&text=Hola%20Itzel%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s&type=phone_number&app_absent=0" target="_blank" class="link-btn">
+          <span class="link-btn__icon"><i class="fab fa-whatsapp"></i></span>
+          <span class="link-btn__text">WhatsApp</span>
+          <span class="link-btn__arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://www.google.com/maps/place/Consultorio+integral+%7C+Nutrizen+-+Mitsalud/@21.151697,-86.8267687,17z/data=!3m1!4b1!4m6!3m5!1s0x8f4c2b00176793f1:0xcab306c110b66044!8m2!3d21.151697!4d-86.8241938!16s%2Fg%2F11ywpcxtr1?entry=ttu" target="_blank" class="link-btn">
+          <span class="link-btn__icon"><i class="fas fa-map-marker-alt"></i></span>
+          <span class="link-btn__text">Consultorio en Cancún</span>
+          <span class="link-btn__arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
+
+      </div>
+
+      <p class="footer-note">nutrizen.com.mx</p>
+
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/nutrizen-chat-widget.js" data-webhook="__WEBHOOK_URL__"></script>
+
+  <script>
+    document.getElementById('btn-agendar').addEventListener('click', function () {
+      if (typeof window.nzOpen === 'function') {
+        var chatWin = document.getElementById('nz-chat-window');
+        if (chatWin && !chatWin.classList.contains('nz-open')) {
+          window.nzOpen();
+        }
+        setTimeout(function () {
+          if (typeof window.nzSend === 'function') {
+            window.nzSend('quiero agendar una consulta');
+          }
+        }, 450);
+      }
+    });
+  </script>
+
+</body>
+</html>
