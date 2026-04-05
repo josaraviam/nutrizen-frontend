@@ -1,0 +1,618 @@
+bot:
+  name: Nutrizen
+  subtitle: Asistente de Itzel Zenil · Nutrióloga
+  welcome: Hola, soy el asistente de Nutrizen. ¿En qué puedo ayudarte hoy?
+  fallback: No tengo información sobre eso todavía. Puedes escribirle directamente a Itzel usando el botón de abajo.
+  whatsapp: "5219981917732"
+
+quick_replies:
+  - ¿Qué servicios ofrecen?
+  - ¿Cuánto cuesta una consulta?
+  - ¿Cómo puedo agendar?
+  - ¿Atienden de forma online?
+
+faq:
+  - id: incluye
+    patterns:
+      - incluye
+      - qué incluye
+      - que incluye
+      - viene incluido
+      - qué tiene
+      - que tiene
+      - material
+      - recetario
+      - guía
+    answer: |
+      Todas las consultas incluyen:
+
+      · Evaluación y diagnóstico nutricional completo
+      · Plan de alimentación 100% personalizado a tus gustos y horarios
+      · Recetarios adaptados a tu presupuesto
+      · Material educativo e infografías
+      · Acompañamiento continuo por WhatsApp durante todo el tratamiento
+
+      La consulta presencial incluye además análisis de composición corporal con báscula InBody profesional.
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: identidad
+    patterns:
+      - quien eres
+      - quién eres
+      - qué eres
+      - que eres
+      - eres humano
+      - eres robot
+      - eres ia
+      - inteligencia artificial
+      - eres itzel
+      - hablas con
+      - con quien hablo
+      - con quién hablo
+      - hablar con itzel
+      - bot
+      - asistente
+    answer: |
+      Soy el asistente virtual de Nutrizen. Puedo ayudarte con información sobre servicios, precios, horarios y consultas.
+
+    suggestions:
+      - ¿Qué servicios ofrecen?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+  - id: precios
+    patterns:
+      - precio
+      - costo
+      - cuánto
+      - cuanto
+      - cobran
+      - tarifa
+      - cuesta
+      - vale
+    answer: |
+      Los precios son:
+
+      Consulta online
+      · Inicial: $500 MXN
+      · Seguimiento: $400 MXN
+
+      Consulta presencial
+      · Inicial: $600 MXN
+      · Seguimiento: $500 MXN
+
+      Ambas incluyen plan personalizado, material educativo y acompañamiento por WhatsApp.
+
+    suggestions:
+      - ¿Qué incluye la consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: horarios
+    patterns:
+      - horario
+      - hora
+      - abierto
+      - disponible
+      - cuándo atienden
+      - cuando atienden
+      - cuándo abren
+      - cuando abren
+    answer: |
+      Horarios de atención:
+
+      Lunes a viernes: 8:00 a 19:00
+      Sábados: 9:00 a 15:00
+      Domingos: cerrado
+
+      Siempre con cita previa.
+
+    suggestions:
+      - ¿Dónde está el consultorio?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: ubicacion
+    patterns:
+      - ubicación
+      - ubicacion
+      - dónde
+      - donde
+      - dirección
+      - direccion
+      - consultorio
+      - lugar
+      - cancún
+      - cancun
+    answer: El consultorio está en Viento 3, Interior 1, 77500 Cancún, Q.R. También ofrecemos consultas online.
+    buttons:
+      - label: Ver en Google Maps
+        url: https://maps.google.com/?q=Consultorio+integral+Nutrizen+Mitsalud+Cancun
+        icon: 📍
+
+    suggestions:
+      - ¿Atienden de forma online?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+  - id: online
+    patterns:
+      - online
+      - virtual
+      - videollamada
+      - distancia
+      - remoto
+      - zoom
+    answer: |
+      Sí, Itzel atiende consultas online por videollamada. Incluyen:
+
+      · Evaluación nutricional completa
+      · Plan de alimentación personalizado
+      · Material digital y recetarios
+      · Acompañamiento por WhatsApp
+
+      Precio: inicial $500 / seguimiento $400 MXN
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+      - ¿Qué servicios ofrecen?
+  - id: presencial
+    patterns:
+      - presencial
+      - en persona
+      - inbody
+      - báscula
+      - bascula
+      - composición corporal
+      - composicion corporal
+    answer: |
+      En la consulta presencial se realiza análisis de composición corporal con báscula InBody profesional, lo que permite datos muy precisos.
+
+      Precio: inicial $600 / seguimiento $500 MXN
+      Ubicación: Viento 3, Interior 1, Cancún.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+      - ¿Dónde está el consultorio?
+  - id: detalle_peso
+    patterns:
+      - más sobre control de peso
+      - mas sobre control de peso
+      - cuéntame más sobre control de peso
+      - cuentame mas sobre control de peso
+    answer: |
+      El programa de control de peso de Itzel incluye:
+
+      · Evaluación inicial de composición corporal
+      · Plan de alimentación personalizado según tus objetivos
+      · Estrategias para pérdida de grasa o aumento de masa muscular
+      · Nutrición deportiva si haces ejercicio
+      · Educación nutricional para mantener resultados a largo plazo
+
+      El enfoque es sostenible, sin dietas restrictivas.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_metabolicas
+    patterns:
+      - más sobre patologías metabólicas
+      - mas sobre patologias metabolicas
+      - cuéntame más sobre patologías metabólicas
+    answer: |
+      El manejo nutricional de patologías metabólicas incluye:
+
+      · Diabetes mellitus tipo 1 y 2
+      · Hipertensión arterial
+      · Colesterol y triglicéridos elevados
+      · Hígado graso no alcohólico
+      · Síndrome metabólico
+      · Gastritis, colitis y síndrome de intestino irritable
+      · Anemia
+
+      El plan se coordina con el tratamiento médico que ya llevas.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_hormonal
+    patterns:
+      - más sobre problemas hormonales
+      - mas sobre problemas hormonales
+      - cuéntame más sobre problemas hormonales
+    answer: |
+      El programa de nutrición hormonal atiende:
+
+      · Síndrome de ovario poliquístico (SOP)
+      · Resistencia a la insulina
+      · Hipotiroidismo
+      · Endometriosis
+      · Salud reproductiva
+      · Menopausia y perimenopausia
+
+      La nutrición puede mejorar significativamente los síntomas hormonales.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_materno
+    patterns:
+      - más sobre nutrición materno-infantil
+      - mas sobre nutricion materno-infantil
+      - cuéntame más sobre nutrición materno-infantil
+    answer: |
+      El acompañamiento materno-infantil cubre:
+
+      · Nutrición preconcepcional (antes del embarazo)
+      · Durante el embarazo
+      · Lactancia materna
+      · Alimentación complementaria (destete)
+      · Nutrición pediátrica
+
+      Es un acompañamiento en cada etapa del desarrollo.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_deportiva
+    patterns:
+      - más sobre nutrición deportiva
+      - mas sobre nutricion deportiva
+      - cuéntame más sobre nutrición deportiva
+    answer: |
+      La nutrición deportiva de Itzel incluye:
+
+      · Planes para mejorar el rendimiento
+      · Nutrición para competencias
+      · Recuperación post-entrenamiento
+      · Suplementación deportiva basada en evidencia
+      · Hidratación estratégica
+
+      Disponible para deportistas aficionados y competitivos.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_especial
+    patterns:
+      - más sobre alimentación especial
+      - mas sobre alimentacion especial
+      - cuéntame más sobre alimentación especial
+    answer: |
+      Los planes de alimentación especial cubren:
+
+      · Dietas veganas y vegetarianas
+      · Alimentación sin gluten (celiaquía)
+      · Intolerancias alimentarias (lactosa, fructosa, etc.)
+      · Alergias alimentarias
+      · Dietas culturales o religiosas específicas
+
+      El plan se adapta completamente a tus restricciones.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: detalle_empresarial
+    patterns:
+      - empresarial
+      - empresa
+      - corporativo
+      - wellness
+      - comedor
+      - taller
+      - platica
+      - plática
+      - más sobre servicios empresariales
+      - mas sobre servicios empresariales
+    answer: |
+      Los servicios empresariales de Nutrizen incluyen:
+
+      · Talleres y pláticas educativas de nutrición
+      · Evaluación nutricional del personal
+      · Diseño de menús corporativos saludables
+      · Programas de wellness empresarial
+      · Asesoría para comedores industriales
+      · Capacitación en hábitos alimenticios
+
+      Ideales para empresas que quieren mejorar la salud de su equipo.
+    suggestions:
+      - ¿Cómo puedo contactarlos?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+  - id: servicios
+    patterns:
+      - servicio
+      - especialidad
+      - especialidades
+      - ofrecen
+      - ofrecen
+      - qué hacen
+      - que hacen
+      - qué tratan
+      - que tratan
+      - ayudan
+      - padecimiento
+    answer: Estas son las especialidades de Itzel:
+    cards:
+      - title: Control de Peso
+        query: Cuéntame más sobre control de peso
+        description: Pérdida de grasa, masa muscular y mejora de hábitos alimenticios
+        icon: ⚖️
+      - title: Patologías Metabólicas
+        query: Cuéntame más sobre patologías metabólicas
+        description: Diabetes, hipertensión, colesterol alto, hígado graso y más
+        icon: ❤️
+      - title: Problemas Hormonales
+        query: Cuéntame más sobre problemas hormonales
+        description: SOP, hipotiroidismo, resistencia a insulina, endometriosis
+        icon: 🌸
+      - title: Nutrición Materno-Infantil
+        query: Cuéntame más sobre nutrición materno-infantil
+        description: Embarazo, lactancia, alimentación complementaria y pediátrica
+        icon: 👶
+      - title: Nutrición Deportiva
+        query: Cuéntame más sobre nutrición deportiva
+        description: Rendimiento, recuperación, suplementación y competencias
+        icon: 🏃
+      - title: Alimentación Especial
+        query: Cuéntame más sobre alimentación especial
+        description: Vegana, vegetariana, sin gluten, intolerancias y alergias
+        icon: 🥗
+      - title: Servicios Empresariales
+        query: Cuéntame más sobre servicios empresariales
+        description: Talleres, evaluaciones y programas de wellness corporativo
+        icon: 🏢
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: peso
+    patterns:
+      - peso
+      - bajar
+      - adelgazar
+      - grasa
+      - dieta
+      - obesidad
+    answer: |
+      El control de peso es una de las especialidades principales de Itzel. Los programas incluyen pérdida de grasa, aumento de masa muscular y mejora de hábitos, siempre de forma saludable y sostenible, sin dietas restrictivas.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: hormonal
+    patterns:
+      - sop
+      - ovario
+      - hormonal
+      - insulina
+      - tiroides
+      - hipotiroidismo
+      - endometriosis
+    answer: |
+      Itzel tiene amplia experiencia en nutrición para problemas hormonales: SOP, resistencia a la insulina, hipotiroidismo, endometriosis y salud reproductiva.
+
+      El enfoque nutricional puede mejorar significativamente los síntomas.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: metabolicas
+    patterns:
+      - diabetes
+      - glucosa
+      - azúcar
+      - azucar
+      - hipertensión
+      - hipertension
+      - presión
+      - presion
+      - colesterol
+      - hígado
+      - higado
+    answer: |
+      El manejo nutricional de patologías metabólicas es una especialidad de Itzel: diabetes tipo 1 y 2, hipertensión, colesterol alto, hígado graso y síndrome metabólico.
+
+      El plan se coordina con el tratamiento médico actual.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: materno
+    patterns:
+      - embarazo
+      - embarazada
+      - lactancia
+      - bebé
+      - bebe
+      - niño
+      - nino
+      - infantil
+      - pediátrico
+      - pediatrico
+      - prenatal
+    answer: |
+      Itzel ofrece acompañamiento nutricional materno-infantil:
+
+      · Nutrición preconcepcional
+      · Durante el embarazo
+      · Lactancia
+      · Alimentación complementaria
+      · Nutrición pediátrica
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: especial
+    patterns:
+      - vegano
+      - vegana
+      - vegetariano
+      - vegetariana
+      - gluten
+      - intolerancia
+      - alergia
+      - sin lácteos
+      - sin lacteos
+    answer: |
+      Sí, todos los planes se adaptan a cualquier preferencia o restricción: vegano, vegetariano, sin gluten, sin lácteos, keto, paleo, etc.
+
+      El plan es 100% personalizado.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Cómo puedo agendar?
+  - id: cancelacion
+    patterns:
+      - cancelar
+      - cancelación
+      - cancelacion
+      - reprogramar
+      - cambiar cita
+      - penalización
+      - penalizacion
+    answer: |
+      Puedes cancelar o reprogramar sin costo hasta 24 horas antes de tu cita.
+
+      Con menos de 24 horas de anticipación se aplica una penalización de $150 MXN.
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+      - ¿Atienden de forma online?
+  - id: contacto
+    patterns:
+      - contacto
+      - correo
+      - email
+      - instagram
+      - whats
+      - wa
+      - tel
+      - celular
+      - celu
+      - cel
+      - whatsapp
+      - teléfono
+      - teléfono de contacto
+      - comunicar
+      - cómo contacto
+      - como contacto
+      - contactarlos
+      - contactarles
+      - hablar con alguien
+      - hablar con ustedes
+    answer: Puedes contactar a Itzel por los siguientes medios:
+    buttons:
+      - label: WhatsApp
+        url: https://wa.me/5219981917732
+        icon: 💬
+      - label: Correo electrónico
+        url: mailto:nutriologaitzelzenil@gmail.com
+        icon: ✉️
+      - label: Instagram
+        url: https://instagram.com/nutrizen___
+        icon: 📸
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Qué servicios ofrecen?
+      - ¿Cómo puedo agendar?
+  - id: agendar
+    patterns:
+      - agendar
+      - cita
+      - reservar
+      - apartar
+      - quiero consulta
+      - primera consulta
+    answer: |
+      ¡Perfecto! Completa el formulario y te conectamos directamente con Itzel por WhatsApp con todos los datos listos.
+    booking_options:
+      - tipo: online
+        label: "💻 Online"
+        precio: "$500 MXN"
+        msg_label: primera consulta online
+      - tipo: presencial
+        label: "🏥 Presencial"
+        precio: "$600 MXN"
+        msg_label: primera consulta presencial
+      - tipo: seguimiento
+        label: "🔄 Seguimiento"
+        precio: ""
+        msg_label: seguimiento
+
+    suggestions:
+      - ¿Cuánto cuesta una consulta?
+      - ¿Atienden de forma online?
+      - ¿Dónde está el consultorio?
+  - id: ayuda
+    patterns:
+      - ayuda
+      - ayúdame
+      - apoyo
+      - necesito ayuda
+      - no sé
+      - no sé por dónde empezar
+    answer: |
+      Con gusto te ayudo. ¿Sobre qué te puedo orientar?
+    suggestions:
+      - ¿Qué servicios ofrecen?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+      - ¿Atienden de forma online?
+  - id: saludo
+    patterns:
+      - hola
+      - buenos días
+      - buenos dias
+      - buenas tardes
+      - buenas noches
+      - hey
+    answer: |
+      ¡Hola! Bienvenido a Nutrizen. ¿En qué puedo ayudarte hoy?
+
+    suggestions:
+      - ¿Qué servicios ofrecen?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+  - id: identidad_nutrizen
+    patterns:
+      - qué es nutrizen
+      - que es nutrizen
+      - nutrizen
+    answer: |
+      Nutrizen es el consultorio de nutrición de Itzel Zenil, nutrióloga certificada y gastrónoma con más de 6 años de experiencia y más de 500 pacientes atendidos.
+
+      Especializada en planes 100% personalizados que combinan ciencia nutricional con gastronomía, porque comer bien debe ser delicioso.
+
+    suggestions:
+      - ¿Qué servicios ofrecen?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
+  - id: gracias
+    patterns:
+      - gracias
+      - muchas gracias
+      - perfecto
+      - listo
+      - excelente
+      - entendido
+    answer: Con gusto. Si tienes alguna otra pregunta, aquí estoy.
+
+    suggestions:
+      - ¿Qué servicios ofrecen?
+      - ¿Cuánto cuesta una consulta?
+      - ¿Cómo puedo agendar?
