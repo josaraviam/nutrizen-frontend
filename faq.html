@@ -5,21 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes | Nutrizen - Itzel Zenil</title>
     <meta name="description" content="Preguntas frecuentes sobre los servicios de nutrición de Itzel Zenil en Cancún.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .faq-container { max-width: 900px; margin: 3rem auto; }
-        .faq-item { background: white; margin-bottom: 1.5rem; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.06); transition: all 0.3s ease; }
+        .faq-item { background: white; margin-bottom: 1.5rem; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.06); transition: all 0.3s; }
         .faq-item:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-        .faq-question { padding: 1.8rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; }
+        .faq-question { padding: 1.8rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.3s; }
         .faq-question:hover { background: var(--sage-50); }
-        .faq-question h4 { font-family: var(--font-display); font-size: 1.4rem; color: var(--sage-800); font-weight: 600; }
-        .faq-toggle { font-size: 1.8rem; color: var(--sage-600); transition: transform 0.3s ease; }
+        .faq-question h4 { font-family: var(--font-display); font-size: 1.4rem; color: var(--sage-800); font-weight: 600; margin: 0; }
+        .faq-toggle { font-size: 1.8rem; color: var(--sage-600); transition: transform 0.3s; flex-shrink: 0; margin-left: 1rem; }
         .faq-item.active .faq-toggle { transform: rotate(45deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .faq-answer-content { padding: 0 2rem 2rem; color: var(--neutral-600); font-size: 1.1rem; line-height: 1.7; }
+        .faq-answer-content { padding: 0 2rem 2rem; color: var(--neutral-600); font-size: 1.05rem; line-height: 1.7; }
     </style>
 </head>
 <body>
@@ -27,18 +26,18 @@
     <div id="header-placeholder"></div>
     <main>
         <div class="page-header">
-            <h1>Preguntas Frecuentes</h1>
-            <p>Resuelve tus dudas antes de agendar tu consulta</p>
+            <h1>Preguntas frecuentes</h1>
+            <p>Resuelve tus dudas antes de agendar tu consulta.</p>
         </div>
         <section>
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>¿Cómo puedo agendar una consulta de nutrición?</h4>
+                        <h4>¿Cómo puedo agendar una consulta?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Puedes agendar tu consulta fácilmente por medio de Instagram (@nutrizen__) o WhatsApp. Respondo rápidamente y te ayudo a encontrar el mejor horario para ti. También puedes escribirme por email.</div>
+                        <div class="faq-answer-content">Puedes agendar por Instagram (@nutrizen___) o WhatsApp. Respondo rápidamente y te ayudo a encontrar el mejor horario. También puedes escribirme por email.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -47,7 +46,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">El seguimiento se realiza cada 15 días o cada mes, dependiendo de tus objetivos y necesidades específicas. Lo determinaremos juntos en la primera consulta según tu caso particular.</div>
+                        <div class="faq-answer-content">El seguimiento se realiza cada 15 días o cada mes, dependiendo de tus objetivos y necesidades. Lo determinaremos en la primera consulta.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -56,7 +55,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Por supuesto. Todos mis menús son 100% personalizados a cada paciente. Trabajo con cualquier preferencia alimentaria: vegana, vegetariana, sin gluten, sin lácteos, keto, paleo, etc. Tu plan se adaptará completamente a tus necesidades.</div>
+                        <div class="faq-answer-content">Por supuesto. Todos mis planes son 100% personalizados. Trabajo con cualquier preferencia alimentaria: vegana, vegetariana, sin gluten, sin lácteos, keto, paleo, etc.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -65,7 +64,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Se recomienda ir con ropa cómoda y ligera para las medidas antropométricas. Si tienes análisis clínicos recientes (no mayores a 3 meses), tráelos. Si no los tienes, en la consulta puedo indicarte cuáles realizarte según tu caso específico.</div>
+                        <div class="faq-answer-content">Se recomienda ropa cómoda y ligera. Si tienes análisis clínicos recientes (no mayores a 3 meses), tráelos. Si no los tienes, en la consulta te indico cuáles realizarte.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -74,7 +73,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">La principal diferencia es que en la consulta presencial realizamos análisis de composición corporal con báscula InBody profesional, lo cual nos da datos muy precisos. En la consulta online te enseño a tomar tus medidas en casa. Ambas modalidades incluyen plan personalizado, material educativo y soporte continuo por WhatsApp.</div>
+                        <div class="faq-answer-content">En la consulta presencial realizamos análisis de composición corporal con báscula InBody profesional. En la online te enseño a tomar tus medidas en casa. Ambas incluyen plan personalizado, material educativo y soporte por WhatsApp.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -83,7 +82,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Sí, trabajo con nutrición infantil y adolescente. Es importante que al menos uno de los padres esté presente en todas las consultas para asegurar el seguimiento adecuado del plan alimenticio en casa.</div>
+                        <div class="faq-answer-content">Sí, trabajo con nutrición infantil y adolescente. Es importante que al menos uno de los padres esté presente en todas las consultas para asegurar el seguimiento del plan en casa.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -92,7 +91,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">La duración del tratamiento varía según tus objetivos. Para pérdida de peso saludable, generalmente recomiendo mínimo 3 meses. Para control de patologías o cambios de hábitos, puede ser un proceso más largo. Lo importante es que el cambio sea sostenible a largo plazo.</div>
+                        <div class="faq-answer-content">Varía según tus objetivos. Para pérdida de peso saludable, generalmente recomiendo mínimo 3 meses. Para control de patologías puede ser un proceso más largo. Lo importante es que el cambio sea sostenible.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -101,7 +100,7 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">No. Uno de mis principales objetivos es crear planes realistas que se adapten a tu estilo de vida. Las recetas son sencillas, con ingredientes accesibles, y se ajustan a tu presupuesto y horarios. Muchos pacientes comentan que las comidas son fáciles de preparar.</div>
+                        <div class="faq-answer-content">No. Creo planes realistas que se adaptan a tu estilo de vida. Las recetas son sencillas, con ingredientes accesibles y ajustados a tu presupuesto y horarios.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -110,16 +109,16 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Sí, puedes cancelar o reprogramar sin costo hasta 24 horas antes de tu cita. Si cancelas o modificas con menos de 24 horas de anticipación, se aplicará una penalización de $150 MXN.</div>
+                        <div class="faq-answer-content">Sí, puedes cancelar o reprogramar sin costo hasta 24 horas antes. Con menos de 24 horas de anticipación se aplica una penalización de $150 MXN.</div>
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <h4>¿Qué tipo de soporte tendré durante el tratamiento?</h4>
+                        <h4>¿Qué soporte tendré durante el tratamiento?</h4>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Tendrás acceso a soporte continuo por WhatsApp durante todo tu tratamiento. Puedes enviarme tus dudas, consultar sobre recetas, pedir ajustes al plan o simplemente compartir tus avances.</div>
+                        <div class="faq-answer-content">Tendrás soporte continuo por WhatsApp durante todo el tratamiento. Puedes enviarme tus dudas, consultar sobre recetas, pedir ajustes al plan o compartir tus avances.</div>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -128,18 +127,25 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <div class="faq-answer-content">Sí, ofrezco servicios empresariales que incluyen talleres y pláticas educativas, evaluación nutricional del personal, creación de menús corporativos y programas de wellness empresarial. Contáctame para crear una propuesta personalizada para tu empresa.</div>
+                        <div class="faq-answer-content">Sí, ofrezco talleres educativos, evaluación nutricional del personal, creación de menús corporativos y programas de wellness empresarial. Contáctame para una propuesta personalizada.</div>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="cta-section">
             <div class="cta-content">
-                <h2>¿Aún Tienes Dudas?</h2>
-                <p>Contáctame directamente y con gusto responderé todas tus preguntas</p>
+                <h2>¿Tienes más dudas?</h2>
+                <p>Contáctame directamente y con gusto respondo todas tus preguntas.</p>
                 <div class="cta-buttons">
-                    <a href="contacto.html" class="primary-cta"><i class="fas fa-comments"></i> Contactar Ahora</a>
-                    <a href="consultas.html" class="secondary-cta" style="background: white; color: var(--sage-700);"><i class="fas fa-info-circle"></i> Ver Tipos de Consulta</a>
+                    <a href="contacto.html" class="primary-cta">
+                        <i class="fas fa-comments"></i>
+                        Contactar ahora
+                    </a>
+                    <a href="consultas.html" class="secondary-cta secondary-cta-white">
+                        <i class="fas fa-info-circle"></i>
+                        Ver tipos de consulta
+                    </a>
                 </div>
             </div>
         </section>
@@ -147,6 +153,6 @@
     <div id="footer-placeholder"></div>
     <script src="js/components.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/nutrizen-chat-widget.js" data-webhook=""></script>
+    <script src="js/nutrizen-chat-widget.js" data-webhook="__WEBHOOK_URL__"></script>
 </body>
 </html>
