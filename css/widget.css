@@ -8,9 +8,28 @@
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   transition: transform 0.2s, background 0.2s;
+  padding: 0; margin: 0;
 }
 #nz-chat-bubble:hover { background: #2f6549; transform: scale(1.07); }
-#nz-chat-bubble svg { width: 26px; height: 26px; }
+#nz-chat-bubble svg {
+  width: 40px; height: 40px; overflow: visible;
+  color: #fff; fill: none; stroke: #fff;
+}
+
+/* Estrellitas */
+.nz-star { transform-origin: center; }
+.nz-star-1 { animation: nzStarPulse 2.2s ease-in-out infinite; }
+.nz-star-2 { animation: nzStarPulse 2.2s ease-in-out infinite 0.4s; }
+.nz-star-3 { animation: nzStarFade 2.2s ease-in-out infinite 0.8s; }
+.nz-star-4 { animation: nzStarFade 2.2s ease-in-out infinite 1.2s; }
+@keyframes nzStarPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.7); }
+  50%       { opacity: 1;   transform: scale(1.2); }
+}
+@keyframes nzStarFade {
+  0%, 100% { opacity: 0.2; }
+  50%       { opacity: 0.9; }
+}
 
 /* Window */
 #nz-chat-window {
@@ -21,6 +40,7 @@
   display: none; flex-direction: column; overflow: hidden;
   font-family: 'Darker Grotesque', 'Segoe UI', sans-serif;
   border: 0.5px solid #d4e4dc;
+  font-size: 14px; line-height: 1.5;
 }
 #nz-chat-window.nz-open { display: flex; animation: nzFadeUp 0.22s ease; }
 
@@ -30,176 +50,220 @@
 }
 
 /* Header */
-.nz-header {
+#nz-chat-window .nz-header {
   background: #3a7d5a; color: #fff;
   padding: 14px 16px; display: flex; align-items: center; gap: 12px;
-  flex-shrink: 0;
+  flex-shrink: 0; border-radius: 0; margin: 0;
 }
-.nz-avatar { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.nz-avatar svg { width: 44px; height: 44px; }
-.nz-header-info h4 { margin: 0; font-size: 16px; font-weight: 700; line-height: 1.2; }
-.nz-header-info p  { margin: 0; font-size: 11.5px; opacity: 0.8; line-height: 1.2; }
-.nz-close {
+#nz-chat-window .nz-avatar {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+#nz-chat-window .nz-avatar svg { width: 36px; height: 36px; overflow: visible; }
+#nz-chat-window .nz-header-info h4 {
+  margin: 0; font-size: 16px; font-weight: 700; line-height: 1.2;
+  font-family: 'Darker Grotesque', 'Segoe UI', sans-serif;
+  color: #fff; letter-spacing: 0; text-transform: none;
+}
+#nz-chat-window .nz-header-info p {
+  margin: 0; font-size: 11.5px; opacity: 0.8; line-height: 1.2; color: #fff;
+}
+#nz-chat-window .nz-close {
   margin-left: auto; background: none; border: none;
   color: #fff; cursor: pointer; opacity: 0.8; padding: 4px;
   border-radius: 50%; transition: opacity 0.15s; flex-shrink: 0;
+  width: auto; height: auto; display: flex; align-items: center;
+  box-shadow: none; transform: none; font-size: 14px;
 }
-.nz-close:hover { opacity: 1; }
+#nz-chat-window .nz-close:hover { opacity: 1; transform: none; box-shadow: none; }
+#nz-chat-window .nz-close svg { width: 20px; height: 20px; stroke: #fff; fill: none; }
 
 /* Messages */
-.nz-messages {
+#nz-chat-window .nz-messages {
   flex: 1; overflow-y: auto; padding: 14px 14px 8px;
   display: flex; flex-direction: column; gap: 10px;
   min-height: 260px; max-height: 380px;
-  background: #f7faf8;
+  background: #f7faf8; border-radius: 0; margin: 0;
 }
 
-.nz-msg { display: flex; flex-direction: column; max-width: 88%; }
-.nz-msg.nz-bot  { align-self: flex-start; }
-.nz-msg.nz-user { align-self: flex-end; }
+#nz-chat-window .nz-msg {
+  display: flex; flex-direction: column; max-width: 88%;
+}
+#nz-chat-window .nz-msg.nz-bot  { align-self: flex-start; }
+#nz-chat-window .nz-msg.nz-user { align-self: flex-end; }
 
-.nz-bubble {
-  padding: 10px 14px; border-radius: 16px; font-size: 14px;
+#nz-chat-window .nz-bubble {
+  padding: 10px 14px; font-size: 14px;
   line-height: 1.55; word-break: break-word; white-space: pre-line;
+  margin: 0; border: none;
 }
-.nz-bot  .nz-bubble { background: #fff; color: #1a2e24; border: 0.5px solid #d4e4dc; border-radius: 4px 16px 16px 16px; }
-.nz-user .nz-bubble { background: #3a7d5a; color: #fff; border-radius: 16px 16px 4px 16px; }
+#nz-chat-window .nz-bot .nz-bubble {
+  background: #fff; color: #1a2e24;
+  border: 0.5px solid #d4e4dc;
+  border-radius: 4px 16px 16px 16px;
+  box-shadow: none;
+}
+#nz-chat-window .nz-user .nz-bubble {
+  background: #3a7d5a; color: #fff;
+  border-radius: 16px 16px 4px 16px;
+  box-shadow: none;
+}
 
-.nz-time { font-size: 11px; color: #8aaa97; margin-top: 3px; padding: 0 4px; }
-.nz-bot  .nz-time { align-self: flex-start; }
-.nz-user .nz-time { align-self: flex-end; }
+#nz-chat-window .nz-time {
+  font-size: 11px; color: #8aaa97; margin-top: 3px; padding: 0 4px;
+}
+#nz-chat-window .nz-bot  .nz-time { align-self: flex-start; }
+#nz-chat-window .nz-user .nz-time { align-self: flex-end; }
 
-/* Typing indicator */
-.nz-typing { display: flex; gap: 5px; align-items: center; padding: 10px 14px; }
-.nz-typing span {
+/* Typing */
+#nz-chat-window .nz-typing {
+  display: flex; gap: 5px; align-items: center; padding: 10px 14px;
+}
+#nz-chat-window .nz-typing span {
   width: 7px; height: 7px; border-radius: 50%; background: #3a7d5a;
-  animation: nzDot 1.1s infinite;
+  animation: nzDot 1.1s infinite; display: inline-block;
 }
-.nz-typing span:nth-child(2) { animation-delay: 0.18s; }
-.nz-typing span:nth-child(3) { animation-delay: 0.36s; }
+#nz-chat-window .nz-typing span:nth-child(2) { animation-delay: 0.18s; }
+#nz-chat-window .nz-typing span:nth-child(3) { animation-delay: 0.36s; }
 @keyframes nzDot { 0%,80%,100%{ opacity: .25 } 40%{ opacity: 1 } }
 
-/* Action buttons (contacto, agendar) */
-.nz-action-btns { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
-.nz-action-btn {
+/* Action buttons */
+#nz-chat-window .nz-action-btns {
+  display: flex; flex-direction: column; gap: 6px; margin-top: 8px;
+}
+#nz-chat-window .nz-action-btn {
   display: flex; align-items: center; gap: 8px;
   padding: 8px 12px; border-radius: 10px;
   background: #f0f7f4; color: #3a7d5a; text-decoration: none;
   font-size: 13px; font-weight: 600; font-family: inherit;
   border: 1px solid #d4e4dc; transition: background 0.15s;
+  transform: none; box-shadow: none;
 }
-.nz-action-btn:hover { background: #dff0e8; }
+#nz-chat-window .nz-action-btn:hover {
+  background: #dff0e8; transform: none; box-shadow: none;
+}
 
 /* Cards */
-.nz-cards {
+#nz-chat-window .nz-cards {
   display: flex; flex-direction: column; gap: 6px;
   margin-top: 8px; width: 100%;
 }
-.nz-card {
+#nz-chat-window .nz-card {
   background: #fff; border: 0.5px solid #d4e4dc;
   border-radius: 12px; padding: 10px 12px;
   display: flex; align-items: flex-start; gap: 10px;
-  transition: box-shadow 0.15s;
+  transition: box-shadow 0.15s; transform: none;
 }
-.nz-card:hover { box-shadow: 0 2px 10px rgba(58,125,90,0.1); }
-.nz-card-clickable { cursor: pointer; }
-.nz-card-clickable:hover { background: #f0f7f4; box-shadow: 0 2px 12px rgba(58,125,90,0.15); }
-.nz-card-hint { font-size: 11.5px; color: #3a7d5a; margin-top: 4px; font-weight: 600; }
-.nz-card-icon {
-  font-size: 20px; line-height: 1;
-  flex-shrink: 0; margin-top: 1px;
+#nz-chat-window .nz-card:hover { box-shadow: 0 2px 10px rgba(58,125,90,0.1); transform: none; }
+#nz-chat-window .nz-card-clickable { cursor: pointer; }
+#nz-chat-window .nz-card-clickable:hover {
+  background: #f0f7f4; box-shadow: 0 2px 12px rgba(58,125,90,0.15); transform: none;
 }
-.nz-card-body { display: flex; flex-direction: column; gap: 2px; }
-.nz-card-title { font-size: 13.5px; font-weight: 700; color: #1a2e24; line-height: 1.3; }
-.nz-card-desc  { font-size: 12.5px; color: #5a7a68; line-height: 1.4; }
-.nz-card-link  {
+#nz-chat-window .nz-card-hint { font-size: 11.5px; color: #3a7d5a; margin-top: 4px; font-weight: 600; }
+#nz-chat-window .nz-card-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+#nz-chat-window .nz-card-body { display: flex; flex-direction: column; gap: 2px; }
+#nz-chat-window .nz-card-title { font-size: 13.5px; font-weight: 700; color: #1a2e24; line-height: 1.3; }
+#nz-chat-window .nz-card-desc  { font-size: 12.5px; color: #5a7a68; line-height: 1.4; }
+#nz-chat-window .nz-card-link  {
   font-size: 12px; font-weight: 600; color: #3a7d5a;
-  text-decoration: none; margin-top: 4px; display: inline-flex;
-  align-items: center; gap: 4px;
+  text-decoration: none; margin-top: 4px;
+  display: inline-flex; align-items: center; gap: 4px;
 }
-.nz-card-link:hover { text-decoration: underline; }
+#nz-chat-window .nz-card-link:hover { text-decoration: underline; }
 
 /* Quick replies */
-.nz-quick-replies {
+#nz-chat-window .nz-quick-replies {
   display: flex; flex-wrap: wrap; gap: 6px;
   padding: 8px 14px; background: #f7faf8;
   border-top: 0.5px solid #d4e4dc; flex-shrink: 0;
 }
-.nz-qr {
+#nz-chat-window .nz-qr {
   background: #fff; color: #3a7d5a; border: 1px solid #3a7d5a;
   border-radius: 20px; padding: 5px 12px; font-size: 12.5px;
   cursor: pointer; font-family: inherit; transition: background 0.15s;
-  white-space: nowrap;
+  white-space: nowrap; transform: none; box-shadow: none;
 }
-.nz-qr:hover { background: #edf5f0; }
+#nz-chat-window .nz-qr:hover { background: #edf5f0; transform: none; box-shadow: none; }
 
 /* Input row */
-.nz-input-row {
+#nz-chat-window .nz-input-row {
   display: flex; gap: 8px; padding: 10px 14px;
   border-top: 0.5px solid #d4e4dc; background: #fff;
-  align-items: flex-end; flex-shrink: 0;
+  align-items: flex-end; flex-shrink: 0; margin: 0;
 }
-.nz-input {
+#nz-chat-window .nz-input {
   flex: 1; border: 0.5px solid #d4e4dc; border-radius: 12px;
   padding: 9px 13px; font-size: 13.5px; font-family: inherit;
   resize: none; outline: none; min-height: 38px; max-height: 90px;
   color: #1a2e24; background: #f7faf8;
+  box-shadow: none; transition: border-color 0.15s;
 }
-.nz-input:focus { border-color: #3a7d5a; background: #fff; }
-.nz-send {
+#nz-chat-window .nz-input:focus { border-color: #3a7d5a; background: #fff; }
+#nz-chat-window .nz-send {
   background: #3a7d5a; border: none; border-radius: 50%;
   width: 38px; height: 38px; cursor: pointer; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.15s; color: #fff;
+  padding: 0; transform: none; box-shadow: none;
 }
-.nz-send:hover { background: #2f6549; }
-.nz-send svg { width: 16px; height: 16px; }
+#nz-chat-window .nz-send:hover { background: #2f6549; transform: none; box-shadow: none; }
+#nz-chat-window .nz-send svg { width: 16px; height: 16px; stroke: #fff; fill: none; }
 
-/* WhatsApp handover button */
-.nz-wa-btn {
+/* WhatsApp handover */
+#nz-chat-window .nz-wa-btn {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   margin: 0 14px 10px; padding: 9px; border-radius: 12px;
   background: transparent; color: #25d366; text-decoration: none;
   font-size: 13px; font-weight: 600; font-family: inherit;
   border: 1.5px solid #25d366; transition: background 0.15s, color 0.15s;
-  flex-shrink: 0;
+  flex-shrink: 0; transform: none; box-shadow: none;
 }
-.nz-wa-btn:hover { background: #25d366; color: #fff; }
-.nz-wa-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+#nz-chat-window .nz-wa-btn:hover { background: #25d366; color: #fff; transform: none; }
+#nz-chat-window .nz-wa-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
 /* Booking form */
-.nz-booking-form {
+#nz-chat-window .nz-booking-form {
   padding: 12px 14px; background: #f7faf8;
-  border-top: 0.5px solid #d4e4dc; display: flex;
-  flex-direction: column; gap: 8px;
+  border-top: 0.5px solid #d4e4dc;
+  display: flex; flex-direction: column; gap: 8px;
 }
-.nz-booking-names { display: flex; gap: 8px; }
-.nz-booking-names .nz-booking-input { flex: 1; min-width: 0; }
-.nz-booking-title { font-size: 13px; font-weight: 600; color: #1a2e24; margin: 0; }
-.nz-booking-options { display: flex; gap: 8px; }
-.nz-booking-opt {
+#nz-chat-window .nz-booking-names { display: flex; gap: 8px; }
+#nz-chat-window .nz-booking-names .nz-booking-input { flex: 1; min-width: 0; }
+#nz-chat-window .nz-booking-title {
+  font-size: 13px; font-weight: 600; color: #1a2e24; margin: 0;
+}
+#nz-chat-window .nz-booking-options { display: flex; gap: 8px; }
+#nz-chat-window .nz-booking-opt {
   flex: 1; padding: 8px; border-radius: 10px; font-size: 13px;
   font-family: inherit; cursor: pointer; border: 1.5px solid #d4e4dc;
-  background: #fff; color: #3a7d5a; font-weight: 500; transition: all 0.15s;
+  background: #fff; color: #3a7d5a; font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+  transform: none; box-shadow: none;
 }
-.nz-booking-opt.selected { border-color: #3a7d5a; background: #edf5f0; font-weight: 700; }
-.nz-booking-input {
+#nz-chat-window .nz-booking-opt.selected {
+  border-color: #3a7d5a; background: #edf5f0; font-weight: 700;
+}
+#nz-chat-window .nz-booking-input {
   padding: 9px 12px; border-radius: 10px; border: 0.5px solid #d4e4dc;
   font-size: 13.5px; font-family: inherit; outline: none; background: #fff;
+  box-shadow: none;
 }
-.nz-booking-input:focus { border-color: #3a7d5a; }
-.nz-booking-send {
+#nz-chat-window .nz-booking-input:focus { border-color: #3a7d5a; }
+#nz-chat-window .nz-booking-send {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   padding: 10px; border-radius: 12px; background: #25d366; color: #fff;
   border: none; cursor: pointer; font-size: 13px; font-weight: 600;
   font-family: inherit; transition: background 0.15s;
+  transform: none; box-shadow: none;
 }
-.nz-booking-send:hover { background: #1ebe5d; }
-.nz-booking-send:disabled { background: #b0c9bc; cursor: not-allowed; }
-.nz-booking-send svg { width: 16px; height: 16px; }
+#nz-chat-window .nz-booking-send:hover { background: #1ebe5d; transform: none; }
+#nz-chat-window .nz-booking-send:disabled {
+  background: #b0c9bc; cursor: not-allowed;
+}
+#nz-chat-window .nz-booking-send svg { width: 16px; height: 16px; }
 
 /* Powered by */
-.nz-powered {
+#nz-chat-window .nz-powered {
   text-align: center; font-size: 10.5px; color: #aac4b5;
   padding: 5px 6px 8px; background: #fff; flex-shrink: 0;
 }
@@ -211,7 +275,18 @@
     bottom: 0; right: 0; left: 0;
     width: 100%; max-width: 100%;
     border-radius: 20px 20px 0 0;
-    max-height: 88vh;
+    max-height: 85vh;
   }
-  .nz-messages { min-height: 200px; max-height: 52vh; }
+  #nz-chat-window .nz-header { position: sticky; top: 0; z-index: 10; }
+  #nz-chat-window .nz-messages { min-height: 160px; max-height: 40vh; }
+  #nz-chat-window .nz-booking-options { flex-direction: column; }
+  #nz-chat-window .nz-booking-names  { flex-direction: column; }
 }
+
+#nz-chat-window,
+#nz-chat-window * {
+  line-height: normal;
+  color: inherit;
+  font-family: 'Darker Grotesque', 'Segoe UI', sans-serif;
+}
+#nz-chat-window { color: #1a2e24; line-height: 1.5; }
