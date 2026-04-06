@@ -546,14 +546,14 @@ faq:
         label: "💻 Online"
         precio_primera: "$500 MXN"
         precio_seguimiento: "$400 MXN"
-        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta online, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
-        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento online, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
+        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta online, entiendo que es una inversión de {precio}. ¿Cuándo tienes disponibilidad?"
+        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento online, entiendo que es una inversión de {precio}. ¿Cuándo tienes disponibilidad?"
       - tipo: presencial
         label: "🏥 Presencial"
         precio_primera: "$600 MXN"
         precio_seguimiento: "$500 MXN"
-        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta presencial, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
-        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento presencial, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
+        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta presencial, entiendo que es una inversión de {precio}. ¿Cuándo tienes disponibilidad?"
+        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento presencial, entiendo que es una inversión de {precio}. ¿Cuándo tienes disponibilidad?"
     suggestions:
       - ¿Cuánto cuesta una consulta?
       - ¿Atienden de forma online?
