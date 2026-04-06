@@ -387,15 +387,27 @@
         const nombre   = nameEl.value.trim();
         const apellido = lastEl.value.trim();
         const nombreCompleto = [nombre, apellido].filter(Boolean).join(' ') || 'cliente';
+
+        // Buscar la opción de booking en el YAML según modalidad
+        const option = (bookingOptions || []).find(o => o.tipo === tipoModalidad);
+        const msgTemplate = option
+          ? (tipoConsulta === 'seguimiento' ? option.msg_seguimiento : option.msg_primera)
+          : null;
+
+        const precio = option
+          ? (tipoConsulta === 'seguimiento' ? option.precio_seguimiento : option.precio_primera)
+          : '';
+
         let msg;
-        if (tipoConsulta === 'seguimiento') {
-          msg = tipoModalidad === 'presencial'
-            ? `Hola Itzel, soy ${nombre || nombreCompleto}. Me gustaría agendar mi próxima consulta de seguimiento presencial, ¿cuándo tienes disponibilidad?`
-            : `Hola Itzel, soy ${nombre || nombreCompleto}. Me gustaría agendar mi próxima consulta de seguimiento online, ¿cuándo tienes disponibilidad?`;
+        if (msgTemplate) {
+          msg = msgTemplate
+            .replace('{nombre}', nombreCompleto)
+            .replace('{precio}', precio || '');
         } else {
-          msg = tipoModalidad === 'presencial'
-            ? `Hola Itzel, me llamo ${nombreCompleto} y me gustaría visitarte en el consultorio para mi primera consulta. ¿Cuándo tienes disponibilidad?`
-            : `Hola Itzel, me llamo ${nombreCompleto} y me gustaría agendar mi primera consulta online contigo. ¿Cuándo tienes disponibilidad?`;
+          // Fallback si no hay template en YAML
+          msg = tipoConsulta === 'seguimiento'
+            ? `Hola Itzel, soy ${nombreCompleto}. Me gustaría agendar mi consulta de seguimiento ${tipoModalidad}. ¿Cuándo tienes disponibilidad?`
+            : `Hola Itzel, me llamo ${nombreCompleto}. Me gustaría agendar mi primera consulta ${tipoModalidad}. ¿Cuándo tienes disponibilidad?`;
         }
         window.open(waURL(phone, msg), '_blank');
         form.querySelectorAll('.nz-booking-opt').forEach(b => { b.disabled = true; b.style.pointerEvents = 'none'; });
@@ -452,17 +464,15 @@
         } else {
           await new Promise(r => setTimeout(r, 500));
           reply = config.bot.fallback;
-          waBtnEl.style.display = 'flex';
         }
         hideTyping();
         addMsg('bot', reply, buttons, cards);
         history.push({ role:'assistant', content:reply, buttons, cards });
         saveSession(history, isOpen);
-        showSuggestions([]);
+        showSuggestions(config.quick_replies);
       } catch(e) {
         hideTyping();
         addMsg('bot', config.bot.fallback);
-        waBtnEl.style.display = 'flex';
         history.push({ role:'assistant', content:config.bot.fallback, buttons:[], cards:[] });
         saveSession(history, isOpen);
         showSuggestions([]);
@@ -479,7 +489,13 @@
         if (s && s.history && s.history.length) {
           history = s.history;
           history.forEach(m => addMsg(m.role === 'user' ? 'user' : 'bot', m.content, m.buttons||[], m.cards||[]));
-          showSuggestions([]);
+          if (s.showBooking) {
+            const agendarEntry = config.faq.find(e => e.id === 'agendar');
+            showBookingForm(agendarEntry ? agendarEntry.booking_options : []);
+            showSuggestions([]);
+          } else {
+            showSuggestions([]);
+          }
         } else {
           addMsg('bot', config.bot.welcome);
           showSuggestions(config.quick_replies);
@@ -507,9 +523,14 @@
       inputEl.style.height = Math.min(inputEl.scrollHeight, 90) + 'px';
     });
 
-    // ── API global para disparar desde links.html ─────────────────────────
+    // ── API global ────────────────────────────────────────────────────────
     window.nzOpen = open;
-    window.nzSend = send;
+    window.nzSend = function(text) {
+      // Si el último mensaje del usuario ya es este texto, no lo reenvíes
+      const lastUserMsg = [...history].reverse().find(m => m.role === 'user');
+      if (lastUserMsg && lastUserMsg.content.trim() === text.trim()) return;
+      send(text);
+    };
 
     const prev = loadSession();
     if (prev && prev.isOpen) setTimeout(() => open(), 120);

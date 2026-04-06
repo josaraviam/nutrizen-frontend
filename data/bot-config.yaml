@@ -2,7 +2,7 @@ bot:
   name: Nutrizen
   subtitle: Asistente de Itzel Zenil · Nutrióloga
   welcome: Hola, soy el asistente de Nutrizen. ¿En qué puedo ayudarte hoy?
-  fallback: No tengo información sobre eso todavía. Puedes escribirle directamente a Itzel usando el botón de abajo.
+  fallback: No tengo información sobre eso todavía. ¿En qué más puedo ayudarte?
   whatsapp: "5219981917732"
 
 quick_replies:
@@ -517,7 +517,7 @@ faq:
     answer: Puedes contactar a Itzel por los siguientes medios:
     buttons:
       - label: WhatsApp
-        url: https://wa.me/5219981917732
+        url: https://api.whatsapp.com/send/?phone=5219981917732&text=Hola%20Itzel%2C%20estaba%20platicando%20con%20el%20asistente%20virtual%20pero%20tengo%20otras%20dudas%20%F0%9F%99%8C&type=phone_number&app_absent=0
         icon: 💬
       - label: Correo electrónico
         url: mailto:nutriologaitzelzenil@gmail.com
@@ -530,6 +530,7 @@ faq:
       - ¿Cuánto cuesta una consulta?
       - ¿Qué servicios ofrecen?
       - ¿Cómo puedo agendar?
+
   - id: agendar
     patterns:
       - agendar
@@ -543,21 +544,21 @@ faq:
     booking_options:
       - tipo: online
         label: "💻 Online"
-        precio: "$500 MXN"
-        msg_label: primera consulta online
+        precio_primera: "$500 MXN"
+        precio_seguimiento: "$400 MXN"
+        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta online, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
+        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento online, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
       - tipo: presencial
         label: "🏥 Presencial"
-        precio: "$600 MXN"
-        msg_label: primera consulta presencial
-      - tipo: seguimiento
-        label: "🔄 Seguimiento"
-        precio: ""
-        msg_label: seguimiento
-
+        precio_primera: "$600 MXN"
+        precio_seguimiento: "$500 MXN"
+        msg_primera: "Hola Itzel, me llamo {nombre}. Me gustaría agendar mi primera consulta presencial, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
+        msg_seguimiento: "Hola Itzel, soy {nombre}. Me gustaría agendar mi consulta de seguimiento presencial, entiendo que es una inversión de ({precio}). ¿Cuándo tienes disponibilidad?"
     suggestions:
       - ¿Cuánto cuesta una consulta?
       - ¿Atienden de forma online?
       - ¿Dónde está el consultorio?
+
   - id: ayuda
     patterns:
       - ayuda

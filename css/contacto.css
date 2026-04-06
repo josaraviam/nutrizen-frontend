@@ -157,3 +157,7 @@
 .contact-pill--fb .contact-pill__icon { background: rgba(24,119,242,0.1);    color: #1877f2; }
 .contact-pill--th:hover { border-color: #000; }
 .contact-pill--fb:hover { border-color: #1877f2; }
+
+.contact-pill--chat .contact-pill__icon { background: rgba(58,125,90,0.12); color: #3a7d5a; }
+.contact-pill--chat:hover { border-color: #3a7d5a; }
+.contact-pill--chat .contact-pill__value { color: var(--sage-700); }

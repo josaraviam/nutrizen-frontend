@@ -1,6 +1,4 @@
 // Nutrizen - Component Loader
-// Inyecta header y footer globales en cada pagina
-// y marca el link activo segun la URL actual
 
 (function () {
   const COMPONENTS_PATH = 'components/';
@@ -34,11 +32,34 @@
     if (nav) nav.classList.toggle('open');
   }
 
-  // Exponer toggleMenu globalmente (lo usan los botones hamburguesa)
+  function initAgendarButtons() {
+    document.querySelectorAll('.nz-agendar').forEach(function (btn) {
+      if (btn.dataset.nzBound) return;
+      btn.dataset.nzBound = '1';
+      btn.addEventListener('click', function (e) {
+        var bubble = document.getElementById('nz-chat-bubble');
+        if (!bubble) return;
+        e.preventDefault();
+        var chatWin = document.getElementById('nz-chat-window');
+        if (chatWin && !chatWin.classList.contains('nz-open')) {
+          if (typeof window.nzOpen === 'function') window.nzOpen();
+        }
+        setTimeout(function () {
+          if (typeof window.nzSend === 'function') {
+            window.nzSend('quiero agendar una consulta');
+          }
+        }, 450);
+      });
+    });
+  }
+
   window.toggleMenu = toggleMenu;
 
   document.addEventListener('DOMContentLoaded', function () {
-    load('#header-placeholder', 'header.html', setActiveNav);
+    load('#header-placeholder', 'header.html', function () {
+      setActiveNav();
+      setTimeout(initAgendarButtons, 150);
+    });
     load('#footer-placeholder', 'footer.html');
   });
 })();
