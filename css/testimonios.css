@@ -1,3 +1,7 @@
+/* =============================================
+   NUTRIZEN · testimonios.css
+   ============================================= */
+
 .testimonials-grid-full {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -5,8 +9,67 @@
     margin-top: 3rem;
 }
 
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: var(--sage-200);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    color: var(--neutral-600);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sage-400), var(--sage-600));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.author-info p {
+    font-weight: 600;
+    color: var(--sage-800);
+    font-size: 0.95rem;
+}
+
+.rating {
+    color: #FFB800;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
 @media (max-width: 768px) {
-    .testimonials-grid-full {
-        grid-template-columns: 1fr;
-    }
+    .testimonials-grid-full { grid-template-columns: 1fr; }
 }
