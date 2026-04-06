@@ -152,3 +152,8 @@
         height: 280px;
     }
 }
+
+.contact-pill--th .contact-pill__icon { background: rgba(0,0,0,0.06);       color: #000; }
+.contact-pill--fb .contact-pill__icon { background: rgba(24,119,242,0.1);    color: #1877f2; }
+.contact-pill--th:hover { border-color: #000; }
+.contact-pill--fb:hover { border-color: #1877f2; }
